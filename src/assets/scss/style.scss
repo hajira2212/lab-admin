@@ -1,0 +1,251 @@
+/*! -----------------------------------------------------------------------------------
+
+    Template Name: Cuba Admin
+    Template URI: http://admin.pixelstrap.com/cuba/theme
+    Description: This is Admin theme
+    Author: Pixelstrap
+    Author URI: https://themeforest.net/user/pixelstrap
+
+-----------------------------------------------------------------------------------
+
+
+ */
+
+// *** utils ***
+
+@import "utils/variables";
+
+:root {
+  --theme-deafult: #09a4e0;
+  --theme-secondary: #f73164;
+}
+
+// *** base ***
+@import "base/reset";
+@import "base/typography";
+
+//  *** components ***
+@import "components/according";
+@import "components/alert";
+@import "components/avatars";
+@import "components/badge";
+@import "components/bookmark";
+@import "components/breadcrumb";
+@import "components/builders";
+
+@import "components/buttons";
+
+@import "components/card";
+@import "components/color";
+@import "components/datepicker";
+@import "components/dropdown";
+@import "components/datatable";
+// @import "components/form-builder";
+@import "components/form-input";
+@import "components/form-wizard";
+@import "components/forms";
+// @import "components/form_builder-2";
+@import "components/icons";
+@import "components/list";
+@import "components/loader";
+@import "components/popover";
+@import "components/print";
+@import "components/radio";
+@import "components/ribbon";
+@import "components/switch";
+@import "components/tab";
+@import "components/table";
+@import "components/touchspin";
+@import "components/tour";
+@import "components/typeahead-search";
+@import "components/react-plugin";
+@import "components/slick.scss";
+@import "components/slick-theme.scss";
+
+//	*** pages ***
+
+@import "pages/blog";
+@import "pages/bookmark-app";
+@import "pages/cart";
+@import "pages/chart";
+@import "pages/chat";
+@import "pages/checkout";
+@import "pages/comingsoon";
+@import "pages/contacts";
+@import "pages/calendar";
+@import "pages/dashboard_2";
+@import "pages/dashboard_default";
+@import "pages/ecommerce";
+@import "pages/email-application";
+@import "pages/errorpage";
+@import "pages/faq";
+@import "pages/file";
+@import "pages/gallery";
+@import "pages/job-search";
+@import "pages/kanban";
+@import "pages/knowledgebase";
+@import "pages/language";
+@import "pages/learning";
+@import "pages/login";
+@import "pages/megaoption";
+@import "pages/order-history";
+@import "pages/page";
+@import "pages/pricing";
+@import "pages/progress";
+@import "pages/projectlist";
+@import "pages/social-app";
+@import "pages/task";
+@import "pages/timeline-v";
+@import "pages/timeliny";
+@import "pages/user-profile";
+@import "pages/wishlist";
+
+// *** layout ***
+
+@import "layout/footer";
+@import "layout/grid";
+@import "layout/header";
+@import "layout/search";
+@import "layout/sidebar";
+@import "layout/rtl";
+@import "layout/box-layout";
+
+/* ---------------------
+	*** themes ***
+-----------------------*/
+@import "themes/dark";
+@import "themes/dark-sidebar";
+@import "themes/theme-customizer";
+@import "themes/responsive";
+
+@import "components/custom";
+@import "dataTable/dataTables.bootstrap5.min.scss";
+
+// .rp-stage > .rp-image {
+//   height: 450px !important;
+//   width: 500px !important;
+// }
+
+// .rp-stage > .rp-shapes {
+//   height: 450px !important;
+//   width: 500px !important;
+// }
+canvas.rp-image {
+  max-width: 800px !important;
+  max-height: 500px !important;
+  margin-bottom: 15px !important;
+}
+
+.mr_t_2 {
+  margin-top: 2% !important;
+  margin-bottom: 2% !important;
+}
+
+.defect-list {
+  max-height: 500px;
+  overflow-y: scroll;
+}
+
+//validation css
+
+.was-validated .form-control:invalid {
+  border-color: #dc3545 !important;
+  padding-right: 0.75em !important;
+  background-image: none !important;
+  background-repeat: no-repeat;
+  background-position: right calc(0.375em + 0.1875rem) center;
+  background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+}
+
+.was-validated .form-control:valid {
+  border-color: #28a745;
+  padding-right: 0.75em !important;
+  background-image: none !important;
+  background-repeat: no-repeat;
+  background-position: right calc(0.375em + 0.1875rem) center;
+  background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+}
+
+.form-control.is-invalid {
+  border-color: #dc3545 !important;
+  padding-right: 0.75em !important;
+  background-image: none !important;
+  background-repeat: no-repeat;
+  background-position: right calc(0.375em + 0.1875rem) center;
+  background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+}
+
+.form-control.is-valid {
+  border-color: #28a745;
+  padding-right: 0.75em !important;
+  background-image: none !important;
+  background-repeat: no-repeat;
+  background-position: right calc(0.375em + 0.1875rem) center;
+  background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+}
+
+.badge-csv-file {
+  border-color: #428498;
+  background-color: #428498;
+}
+.was-validated .form-check-input:valid ~ .form-check-label,
+.form-check-input.is-valid ~ .form-check-label {
+  color: #000000 !important;
+}
+
+// .defect-check {
+//   padding: 5px !important;
+// }
+
+.defect-check checkbox {
+  padding: 15px !important;
+}
+
+.defect-check label {
+  padding-left: 5px !important;
+  margin-bottom: 6px;
+  text-align: center;
+}
+
+.master-pl-0 .form-check {
+  padding-left: 0;
+}
+.iiz__hint {
+  top: 10px !important;
+}
+
+.imageModal {
+  width: "30vw";
+}
+@media only screen and (max-width: 600px) {
+  .imageModal {
+    width: "70vw";
+  }
+}
+
+.dash-status-table .icon,
+.layer-table .icon {
+  font-size: 20px;
+  color: #f06060;
+  cursor: pointer !important;
+}
+
+.instruction-header {
+  font-weight: 500;
+  color: #2b2b2b;
+  text-decoration: none;
+  padding: 0px 20px;
+  border-bottom: 1px solid #ebf2f9;
+}
+
+.instruction-body {
+  padding: 10px 5px;
+}
+
+.mouse-hand {
+  cursor: pointer !important;
+}
+
+.report-export {
+  padding-top: 30px;
+}

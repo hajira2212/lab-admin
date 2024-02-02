@@ -1,0 +1,229 @@
+.info{
+    padding: 15px;
+    background-color: $white;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.125);
+    clear: both;
+}
+
+.info h6{
+    font-size: 14px;
+}
+.updateBar-container{
+    padding: 15px 20px;
+    height: 100%;
+    position: relative;
+    overflow:scroll;
+    scroll-behavior: smooth;
+    margin-bottom: 30px;
+}
+.card{
+    border-radius: 5px;
+}
+
+body.dark-only .info {
+    background-color: #262932;
+    box-shadow: 1px 1px 2px 1px  rgba(0, 0, 0, 0.125);
+    border: 1px solid #374558;
+}
+
+.page-wrapper.compact-wrapper .page-body-wrapper.sidebar-icon div.sidebar-wrapper .sidebar-main .sidebar-links > li .sidebar-link.active{
+    background-color: transparent !important;
+}
+
+.card-body{
+    padding: 15px !important;
+}
+
+.o-hidden .card-body{
+    padding: 40px !important;
+}
+
+.defect-panel .nav-link{
+    padding: 5px 0px;
+}
+
+.defect-panel dd{
+    margin-left: 10px;
+}
+
+.inspection-stats{
+    float: left;
+    margin: 3px 10px;
+}
+
+.inspection-stats span{
+    padding-left: 10px;
+}
+
+.color-light{
+    color: #249ff1
+}
+.clear{
+    clear: both;
+}
+
+// .dash-status-table{
+//     width: 100%;
+//         overflow: auto;
+//         display: block;
+//         table-layout: auto;
+// }
+.dash-status-table th, .wl-table th{
+    text-align: center;
+    vertical-align: middle;
+    background-color: #f1f9ff;
+}
+
+.halogenix-column{
+    background-color: #9dd4f8 !important;
+    border-color: #80c4f1 !important;
+}
+
+.dash-status-table .dispostion-column{
+    background-color: #9dd4f8 !important;
+    border-color: #80c4f1 !important;
+}
+
+.hand-cursor{
+    cursor: pointer;
+}
+
+.lot-col{
+    min-width: 100px;
+}
+.name-col{
+    min-width: 160px;
+}
+.date-col{
+    min-width: 160px;
+}
+.url-col{
+    max-width: 700px;
+}
+.master-container{
+    margin: 0px auto;
+    width: 100%;
+    max-width: 800px;
+    min-height: 250px;
+}
+.layer-conatiner{
+    max-width: 100%;
+}
+.master-container .card .card-header{
+    padding: 10px;
+    text-align: right;
+}
+
+.wafer-container .card .card-header button{
+    padding: 10px;
+    float: right !important;
+}
+
+.master-table .icon, .wl-table .icon, .layer-table .icon{
+    font-size: 20px;
+    color: #f06060;
+    cursor: pointer !important;
+}
+
+.master-table .icon-green, .layer-table .icon-green{
+    font-size: 20px;
+    color: #77bd07;
+}
+
+.master-table th, .layer-table th{
+text-align: center;
+    vertical-align: middle;
+    background-color: #9dd4f8 !important;
+    border-color: #80c4f1 !important;
+}
+
+.table-legend{
+    text-align: left;
+    margin: 10px 0px;
+    // max-width: 60px;
+}
+.master-checkbox{
+    width: 20px;
+    height: 20px;
+    float: right;
+}
+.defect-image{
+    border-radius: 5px;
+    width: 50px;
+    height: 50px;
+    border: 1px solid #ebebeb;
+}
+
+.groupStyle{
+    background-color: #f0efef;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+@media only screen and (max-width: 991.98px)
+{
+    .page-wrapper.compact-wrapper .page-body-wrapper.sidebar-icon div.sidebar-wrapper .logo-wrapper .back-btn {
+        font-size: 25px;
+        color: #f7f7f7;
+        margin-top: -6px;
+    }
+
+    .close_icon .toggle-sidebar svg{
+        stroke:#249ff1 !important;
+        width: 25px !important;
+    }
+}
+
+ .theme-form .form-group input{
+    color: #333 !important;
+}
+
+.btn.accordion-header{
+    padding: 0px 10px;
+}
+.accordion-header{
+    width: 100%;
+}
+
+.disposition-stats{
+    float: right;
+    margin-top: 8px;
+}
+
+.defectsLogLink{
+    color: #249ff1;
+    text-align: center;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.defects-log-items{
+    padding-left: 20px;
+}
+
+.extended-side-container{
+    width: 566px;
+    right: -568px;
+}
+
+.extended-side-container-large{
+    width: 720px;
+    right: -722px;
+}
+
+.wafer-image-container img{
+    max-height: 500px;
+}
+
+.mar-tb-10{
+    margin: 10px 0px;
+}
+
+label { 
+    font-weight: 500;
+}
+.filter-btn{
+    margin-top: 30px;
+}
