@@ -4,21 +4,20 @@ import { MENUITEMS, MANAGER_MENUITEMS } from './menu';
 import { ArrowRight, ArrowLeft, ChevronsLeft } from 'react-feather';
 import { Link } from 'react-router-dom'
 import { translate } from 'react-switch-lang';
+import configDB from '../../data/customizer/config';
 import { ADMIN_MENUITEMS, MASTER_MENUITEMS } from './admin-menu';
 
 const Sidebar = (props) => {
   var menu_list = MENUITEMS;
   const jwt_token = localStorage.getItem('token');
   const role = localStorage.getItem('role');
-  if(role == 'manager'){
+  if(role == 'user'){
     menu_list = MANAGER_MENUITEMS;
   }
-  else if(role === 'super-admin'){
+  else if(role === 'admin'){
     menu_list = ADMIN_MENUITEMS;
   }
-  else if(role === 'admin'){
-    menu_list = MASTER_MENUITEMS;
-  }
+  
 
   const [mainmenu, setMainMenu] = useState(menu_list);
 
