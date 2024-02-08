@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Container, Row, Col, Form, FormGroup, Input, Label, Button } from 'reactstrap'
 import { withRouter } from 'react-router-dom'
 import { toast } from 'react-toastify'
-import { loginInspectors } from '../api'
+import { login } from '../api'
 
 import { connect } from 'react-redux';
 import { setAlert } from '../actions/alert'
@@ -21,8 +21,53 @@ const Login = (props) => {
   const [loading, setLoading] = useState(false)
   const [togglePassword, setTogglePassword] = useState(false)
   const formRef = useRef(null);
+  const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
 
+    const [name, setName] = useState(
+      localStorage.getItem('Name')
+  );
+  const [userType, setUserType] = useState(
+    localStorage.getItem('UserType')
+);
 
+useEffect(() => {
+  
+  localStorage.setItem('Name', name);
+  localStorage.setItem('UserType', userType);
+
+  }, [name, userType]);
+
+  const loginWithUser = (event) => {
+    event.preventDefault();
+    setLoading(true);
+    let user= JSON.stringify({ email, password });
+    login(user).then((res) => {
+      if (res.data.success) {
+        const user = res.data.user;
+        setName(user.name);
+        setUserType(user.role.toUpperCase());
+        localStorage.setItem("token", res.data.token);
+        localStorage.setItem("role", user.role);
+        localStorage.setItem("authenticated", true);
+        localStorage.setItem("currentUser", JSON.stringify(user));
+        // localStorage.setItem('cid', user.company._id);
+        clearValues();
+        window.location.href = `${process.env.PUBLIC_URL}/dashboard`;
+      } else {
+        clearValues();
+        toast.error(res.data.error, {
+          position: toast.POSITION.TOP_RIGHT,
+          autoClose: 3000,
+        });
+      }
+    });
+    
+  }
+
+  const clearValues = () => {
+    setLoading(false);
+  };
 
 
   return (
@@ -42,35 +87,44 @@ const Login = (props) => {
               </div>
               <div className="login-main login-tab">
 
-                <ValidationForm className="theme-form" ref={formRef}>
+                <ValidationForm className="theme-form" onSubmit={loginWithUser} ref={formRef}>
                   <h4>Sign in</h4>
                   <p>{"Enter your email & password to login"}</p>
 
                   <FormGroup>
                     <Label htmlFor="signinEmail" className="col-form-label">{"Email Address"}</Label>
                     <TextInput
+                      required
                       name="signinEmail"
                       className="form-control"
                       type="email"
+                      validator={validator.isEmail}
+                      errorMessage={{ required: "Email Is Required", validator: "Invalid Email" }}
+                      onChange={e => setEmail(e.target.value)}
                       placeholder="your email id"
-                    />
+                      defaultValue={email} />
                   </FormGroup>
+
                   <FormGroup>
                     <Label htmlFor="signinPassword" className="col-form-label">{"Password"}</Label>
                     <TextInput
+                      required
                       name="signinPassword"
                       className="form-control"
                       type={togglePassword ? "text" : "password"}
                       placeholder="password"
-                      />
+                      validator={validator.isStrongPassword}
+                      errorMessage={{ required: "Password Is Required", validator: "Use 8 or more characters with a mix of letters, numbers & symbols" }}
+                      onChange={e => setPassword(e.target.value)}
+                      defaultValue={password} />
                     <div className="show-hide" onClick={() => setTogglePassword(!togglePassword)}><span className={togglePassword ? "" : "show"}></span></div>
                   </FormGroup>
+
                   <div className="form-group mb-0">
                     <div className="checkbox ml-3">
                       <Input id="checkbox1" type="checkbox" />
                       <Label className="text-muted" for="checkbox1">{"Remember Password"}</Label>
                     </div>
-                    {/* <a className="link" href="#javascript">{"Forgot Password"}</a> */}
 
                     <Button color="primary" disabled={loading} className="btn-block" >Login</Button>
                   </div>
@@ -81,11 +135,8 @@ const Login = (props) => {
                       </div>
                     </div>
                   )}
-                  {/* <p></p> */}
-                  {/* <div className="text-center"><a href="/signin">Login as Company</a></div> */}
                 </ValidationForm>
-
-              </div>
+               </div>
             </div>
           </div>
         </Col>

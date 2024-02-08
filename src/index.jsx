@@ -69,7 +69,7 @@ const Root = (props) => {
                   />
                 )}
                 {(userrole === "super-admin" ||
-                  userrole === "admin" || userrole === "manager") && (
+                  userrole === "admin") && (
                   <>
                     <Route
                       exact
@@ -77,7 +77,7 @@ const Root = (props) => {
                       render={() => {
                         return (
                           <Redirect
-                            to={`${process.env.PUBLIC_URL}/admin/dash`}
+                            to={`${process.env.PUBLIC_URL}/dashboard`}
                           />
                         );
                       }}
@@ -88,7 +88,7 @@ const Root = (props) => {
                       render={() => {
                         return (
                           <Redirect
-                            to={`${process.env.PUBLIC_URL}/admin/dash`}
+                            to={`${process.env.PUBLIC_URL}/dashboard`}
                           />
                         );
                       }}
