@@ -14,7 +14,7 @@ export const ADMIN_MENUITEMS = [
     menucontent: "Manage InXpector",
     Items: [
       {
-        path: `${process.env.PUBLIC_URL}/admin/dash`,
+        path: `${process.env.PUBLIC_URL}/dashboard`,
         icon: Home,
         title: "Dashboard",
         type: "link",
@@ -49,10 +49,11 @@ export const ADMIN_MENUITEMS = [
         type: "sub",
         active: false,
         children: [
+          
           {
-            path: `${process.env.PUBLIC_URL}/admin/temple-master`,
+            path: `${process.env.PUBLIC_URL}/patient`,
             type: "link",
-            title: "temple Master",
+            title: "patient Master",
           },
           // {
           //   path: `${process.env.PUBLIC_URL}/admin/layer-master`,
@@ -132,7 +133,7 @@ export const MASTER_MENUITEMS = [
     menucontent: "Manage InXpector",
     Items: [
       {
-        path: `${process.env.PUBLIC_URL}/admin/dash`,
+        path: `${process.env.PUBLIC_URL}/dashboard`,
         icon: Home,
         title: "Dashboard",
         type: "link",

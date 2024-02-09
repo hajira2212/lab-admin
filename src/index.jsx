@@ -43,13 +43,17 @@ const Root = (props) => {
     // eslint-disable-next-line
   }, []);
 
+  
   return (
     <Fragment>
       <Provider store={store}>
         <BrowserRouter basename={`/`}>
           <Switch>
             <Route path={`${process.env.PUBLIC_URL}/login`} component={Login} />
-          
+            {/* <Route
+              path={`${process.env.PUBLIC_URL}/signin`}
+              component={Signin}
+            /> */}
             <Route
               path={`${process.env.PUBLIC_URL}/callback`}
               render={() => <Callback />}
@@ -68,20 +72,20 @@ const Root = (props) => {
                     }}
                   />
                 )}
-                {(userrole === "super-admin" ||
-                  userrole === "admin") && (
+                {(userrole === "admin" || userrole === "manager") && (
                   <>
-                    <Route
+                    {/* <Route
                       exact
-                      path={`${process.env.PUBLIC_URL}/admin`}
+                      path={`${process.env.PUBLIC_URL}/`}
                       render={() => {
                         return (
                           <Redirect
-                            to={`${process.env.PUBLIC_URL}/dashboard`}
+                            to={`${process.env.PUBLIC_URL}/patient`}
                           />
                         );
                       }}
-                    />
+                    /> */}
+
                     <Route
                       exact
                       path={`${process.env.PUBLIC_URL}/`}
@@ -146,7 +150,7 @@ const Root = (props) => {
               </App>
             ) : (
               <Redirect to={`${process.env.PUBLIC_URL}/login`} />
-           
+              // <Redirect to={`${process.env.PUBLIC_URL}/signin`} />
             )}
           </Switch>
         </BrowserRouter>
